@@ -119,26 +119,31 @@
 # Exercitiul 8
 
 # def list_to_tuple(*lists):
-# #     new_list = []
-# #     max_length = len(max(lists, key=len))
-# #     for i in lists:
-# #         if len(i) < max_length:
-# #             while not len(i) == max_length:
-# #                 i += [None]
-# #         new_list += i
-# #     k = 0
-# #     print(new_list)
-# #     while k < len(lists):
-# #         for j in range(0, len(lists)):
-# #             aux = new_list[(4*j+4)]
-# #             new_list[(4*j+4)] = new_list[j]
-# #             new_list[j] = new_list[aux]
-# #         k += 1
-# #     print(new_list)
-# #
-# #
-# # list_to_tuple([1, 2, 3], [3, 5, 6], [2, 3])
-
+#     new_list = []
+#     max_length = len(max(lists, key=len))
+#     for i in lists:
+#         if len(i) < max_length:
+#             while not len(i) == max_length:
+#                 i += [None]
+#         new_list += i
+#     k = 0
+#     print(new_list)
+#     while k < len(lists):
+#         for j in range(0, len(lists) - 1):
+#             aux = new_list[(max_length* j + max_length)]
+#             new_list[(max_length * j + max_length)] = new_list[j+1]
+#             new_list[j+1] = aux
+#         k += 1
+#     tupla = []
+#     for i in new_list:
+#         if len(tupla) < 3:
+#             tupla.append(i)
+#         else:
+#             print(tupla)
+#             tupla.clear()
+#
+#
+# list_to_tuple([1, 2, 3], [3, 5, 6], [2, 3])
 
 # Exercitiul 9
 
@@ -159,25 +164,3 @@
 # x = {1:2, 3:5}
 # for el in x.items():
 #     print(el[1])
-
-# Test 1
-
-def problema1(n):
-    suma = 0
-    for i in range(1, n+1):
-        suma += i
-    return suma
-
-
-def problema5(n):
-    number = str(int(n, 8))
-    if number == number[:: -1]:
-        return True
-    else:
-        return False
-
-
-print(problema1(199))
-print(problema5("10"))
-
-

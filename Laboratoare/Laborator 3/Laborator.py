@@ -86,7 +86,7 @@ def sets_to_dictionary(*sets):
             dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "|" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].union(sets[j]))})
             dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "&" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].intersection(sets[j]))})
             dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "-" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].difference(sets[j]))})
-            dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "--" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[j].difference(sets[i]))})
+            dictionary.update({"{" + str(lista[2]) + "," + str(lista[3]) + "}" + "-" + "{" + str(lista[0]) + "," + str(lista[1]) + "}": len(sets[j].difference(sets[i]))})
     count = 0
     for j in sets:
         count += 1

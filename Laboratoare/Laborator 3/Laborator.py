@@ -28,16 +28,16 @@
 # Exercitiul 3
 
 
-# def myprint(d):
-#     for k, v in d.items():
-#         if isinstance(v, dict):
-#             myprint(v)
-#         else:
-#             print("{0} : {1}".format(k, v))
-#
-#
-# myprint({u'xml': {u'config': {u'portstatus': {u'status': u'good'}, u'target': u'1'},
-#                   u'port': u'11'}})
+def myprint(d):
+    for k, v in d.items():
+        if isinstance(v, dict):
+            myprint(v)
+        else:
+            print("{0} : {1}".format(k, v))
+
+
+myprint({u'xml': {u'config': {u'portstatus': {u'status': u'good'}, u'target': u'1'},
+                  u'port': u'11'}})
 
 #Exercitiul 4
 
@@ -73,32 +73,32 @@
 #Exercitiul 7
 
 
-def sets_to_dictionary(*sets):
-    dictionary = {}
-    lista = []
-    for i in range(0, len(sets)):
-        for j in range(i+1, len(sets)):
-            lista.clear()
-            for i1 in sets[i]:
-                lista.append(i1)
-            for i2 in sets[j]:
-                lista.append(i2)
-            dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "|" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].union(sets[j]))})
-            dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "&" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].intersection(sets[j]))})
-            dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "-" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].difference(sets[j]))})
-            dictionary.update({"{" + str(lista[2]) + "," + str(lista[3]) + "}" + "-" + "{" + str(lista[0]) + "," + str(lista[1]) + "}": len(sets[j].difference(sets[i]))})
-    count = 0
-    for j in sets:
-        count += 1
-        if count == len(sets):
-            print(j, end="")
-        else:
-            print(j, end=",")
-    print("=>")
-    print("{")
-    for k in dictionary:
-        print(k + ":" + str(dictionary[k]))
-    print("}")
+# def sets_to_dictionary(*sets):
+#     dictionary = {}
+#     lista = []
+#     for i in range(0, len(sets)):
+#         for j in range(i+1, len(sets)):
+#             lista.clear()
+#             for i1 in sets[i]:
+#                 lista.append(i1)
+#             for i2 in sets[j]:
+#                 lista.append(i2)
+#             dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "|" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].union(sets[j]))})
+#             dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "&" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].intersection(sets[j]))})
+#             dictionary.update({"{" + str(lista[0]) + "," + str(lista[1]) + "}" + "-" + "{" + str(lista[2]) + "," + str(lista[3]) + "}": len(sets[i].difference(sets[j]))})
+#             dictionary.update({"{" + str(lista[2]) + "," + str(lista[3]) + "}" + "-" + "{" + str(lista[0]) + "," + str(lista[1]) + "}": len(sets[j].difference(sets[i]))})
+#     count = 0
+#     for j in sets:
+#         count += 1
+#         if count == len(sets):
+#             print(j, end="")
+#         else:
+#             print(j, end=",")
+#     print("=>")
+#     print("{")
+#     for k in dictionary:
+#         print(k + ":" + str(dictionary[k]))
+#     print("}")
 
 
-sets_to_dictionary({1, 2}, {2, 3}, {1, 5})
+# sets_to_dictionary({1, 2}, {2, 3}, {1, 5})
